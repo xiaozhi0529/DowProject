@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad7f496c-eb13-44bd-8ecc-f4e0733a07e2" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/WebUi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/navigation-bar/navigation-bar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/navigation-bar/navigation-bar.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/navigation-bar/navigation-bar.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/navigation-bar/navigation-bar.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/index/index.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project.private.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sitemap.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="31NLg14doRiIbblROYVQDxALfxw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="ad7f496c-eb13-44bd-8ecc-f4e0733a07e2" name="变更" comment="" />
+      <created>1755359694911</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755359694911</updated>
+      <workItem from="1755359697260" duration="218000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
