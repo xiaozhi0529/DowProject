@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7f496c-eb13-44bd-8ecc-f4e0733a07e2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="ad7f496c-eb13-44bd-8ecc-f4e0733a07e2" name="变更" comment="初始化-前端">
       <change afterPath="$PROJECT_DIR$/.idea/WebUi.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/navigation-bar/navigation-bar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/navigation-bar/navigation-bar.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/navigation-bar/navigation-bar.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/navigation-bar/navigation-bar.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/index/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project.private.config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sitemap.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +21,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="31NLg14doRiIbblROYVQDxALfxw" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -47,6 +34,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -59,7 +52,16 @@
       <option name="presentableId" value="Default" />
       <updated>1755359694911</updated>
       <workItem from="1755359697260" duration="218000" />
+      <workItem from="1755362774471" duration="658000" />
     </task>
+    <task id="LOCAL-00001" summary="初始化-前端">
+      <created>1755362897548</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755362897548</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,5 +80,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="初始化-前端" />
+    <option name="LAST_COMMIT_MESSAGE" value="初始化-前端" />
   </component>
 </project>
