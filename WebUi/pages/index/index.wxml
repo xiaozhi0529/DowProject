@@ -1,28 +1,163 @@
-<!--index.wxml-->
-<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    <view class="userinfo">
-      <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
-        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-        </button>
-        <view class="nickname-wrapper">
-          <text class="nickname-label">昵称</text>
-          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
-        </view>
-      </block>
-      <block wx:elif="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-        <view wx:else> 请使用2.10.4及以上版本基础库 </view>
-      </block>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
-    </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
+<!-- 视频下载小程序主页面 -->
+<view class="container">
+  <!-- 滚动通知栏 -->
+  <view class="notice-bar">
+    <view class="notice-content">
+      <text class="notice-icon">📢</text>
+      <text class="notice-text">支持抖音、快手、微博、B站、YouTube等平台视频下载</text>
     </view>
   </view>
-</scroll-view>
+
+  <!-- 输入区域 -->
+  <view class="input-section">
+    <!-- 链接输入框 -->
+    <view class="input-group">
+      <text class="label">视频链接</text>
+      <textarea 
+        class="url-input" 
+        placeholder="请粘贴视频链接，支持抖音、快手、微博、B站等平台"
+        value="{{videoUrl}}"
+        bindinput="onUrlInput"
+        maxlength="500"
+        auto-height
+      ></textarea>
+    </view>
+
+    <!-- 下载选项 -->
+    <view class="options-group">
+      <text class="label">下载选项</text>
+      
+      <!-- 去水印选项 -->
+      <view class="option-item">
+        <text class="option-label">去除水印</text>
+        <switch 
+          checked="{{removeWatermark}}" 
+          bindchange="onWatermarkChange"
+          color="#007AFF"
+        />
+      </view>
+
+      <!-- 视频质量选择 -->
+      <view class="option-item">
+        <text class="option-label">视频质量</text>
+        <picker 
+          mode="selector" 
+          range="{{qualityOptions}}" 
+          value="{{qualityIndex}}"
+          bindchange="onQualityChange"
+        >
+          <view class="picker-text">{{qualityOptions[qualityIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 下载按钮 -->
+    <view class="button-group">
+      <button 
+        class="download-btn primary" 
+        bindtap="downloadVideo"
+        loading="{{isDownloading}}"
+        disabled="{{!videoUrl || isDownloading}}"
+      >
+        {{isDownloading ? '下载中...' : '开始下载'}}
+      </button>
+      
+      <button 
+        class="download-btn secondary" 
+        bindtap="downloadWithoutWatermark"
+        loading="{{isDownloading}}"
+        disabled="{{!videoUrl || isDownloading}}"
+      >
+        去水印下载
+      </button>
+    </view>
+  </view>
+
+  <!-- 下载历史 -->
+  <view class="history-section" wx:if="{{downloadHistory.length > 0}}">
+    <view class="section-header">
+      <text class="section-title">下载历史</text>
+      <text class="clear-btn" bindtap="clearHistory">清空</text>
+    </view>
+    
+    <view class="history-list">
+      <view 
+        class="history-item" 
+        wx:for="{{downloadHistory}}" 
+        wx:key="id"
+        bindtap="viewHistoryItem"
+        data-item="{{item}}"
+      >
+        <view class="history-info">
+          <text class="history-title">{{item.title || '未知标题'}}</text>
+          <text class="history-platform">{{item.platform}}</text>
+          <text class="history-time">{{item.time}}</text>
+        </view>
+        <view class="history-status">
+          <text class="status-text {{item.success ? 'success' : 'error'}}">
+            {{item.success ? '成功' : '失败'}}
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 使用说明 -->
+  <view class="instructions-section">
+    <text class="section-title">使用说明</text>
+    <view class="instruction-list">
+      <view class="instruction-item">
+        <text class="instruction-number">1</text>
+        <text class="instruction-text">复制视频链接（支持分享链接）</text>
+      </view>
+      <view class="instruction-item">
+        <text class="instruction-number">2</text>
+        <text class="instruction-text">粘贴到输入框中</text>
+      </view>
+      <view class="instruction-item">
+        <text class="instruction-number">3</text>
+        <text class="instruction-text">选择下载选项（原视频或去水印）</text>
+      </view>
+      <view class="instruction-item">
+        <text class="instruction-number">4</text>
+        <text class="instruction-text">点击下载按钮开始下载</text>
+      </view>
+      <view class="instruction-item">
+        <text class="instruction-number">5</text>
+        <text class="instruction-text">下载完成后保存到相册</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部信息 -->
+  <view class="footer">
+    <text class="footer-text">仅供个人学习使用，请遵守相关法律法规</text>
+  </view>
+</view>
+
+<!-- 加载提示 -->
+<view class="loading-mask" wx:if="{{isDownloading}}">
+  <view class="loading-content">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">正在下载视频，请稍候...</text>
+  </view>
+</view>
+
+<!-- 结果弹窗 -->
+<view class="result-modal" wx:if="{{showResultModal}}">
+  <view class="modal-content">
+    <view class="modal-header">
+      <text class="modal-title">{{resultModal.title}}</text>
+      <text class="modal-close" bindtap="closeResultModal">×</text>
+    </view>
+    <view class="modal-body">
+      <text class="modal-message">{{resultModal.message}}</text>
+      <view class="modal-actions" wx:if="{{resultModal.success}}">
+        <button class="modal-btn" bindtap="saveToAlbum">保存到相册</button>
+        <button class="modal-btn secondary" bindtap="closeResultModal">关闭</button>
+      </view>
+    </view>
+  </view>
+</view>

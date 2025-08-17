@@ -1,0 +1,20 @@
+# 视频下载服务依赖包列表
+# 核心Web框架
+fastapi==0.104.1  # 现代、快速的Web框架
+uvicorn[standard]==0.24.0  # ASGI服务器
+
+# 视频下载和处理
+yt-dlp==2023.11.16  # 强大的视频下载工具
+ffmpeg-python==0.2.0  # FFmpeg Python绑定
+
+# 数据处理和验证
+pydantic==2.5.0  # 数据验证和设置管理
+python-multipart==0.0.6  # 处理文件上传
+
+# HTTP客户端
+aiohttp==3.9.1  # 异步HTTP客户端/服务器
+requests==2.31.0  # HTTP库
+
+# 工具库
+python-dateutil==2.8.2  # 日期时间处理
+Pillow==10.1.0  # 图像处理
